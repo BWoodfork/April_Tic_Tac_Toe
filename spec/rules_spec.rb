@@ -31,38 +31,81 @@ describe Rules do
 
       Rules.board_full?(open_board).should == false
     end
+
+    it "it knows when there is no winner" do
+      Rules.game_winner(Array.new(9)).should == false
+    end
   end
 
-  context "checks for horizontal winner" do
+  context "check horizontal winner" do
     it "should check horizontal row for a game winner" do
       win_board =  ["x", "x", "x",
                     nil, nil, nil,
                     nil, nil, nil]
 
-      Rules.row_winner(win_board).should == true
+      Rules.game_winner(win_board).should == true
     end
 
     it "should check second horizontal row for a game winner" do
       win_board = [nil, nil, nil,
                    "x", "x", "x",
                    nil, nil, nil]
-      Rules.row_winner(win_board).should == true
+      Rules.game_winner(win_board).should == true
     end
 
     it "should check third horizontal row for a game winner" do
       win_board = [nil, nil, nil,
                    nil, nil, nil,
                    "x", "x", "x"]
-      Rules.row_winner(win_board).should == true
+      Rules.game_winner(win_board).should == true
     end
   end
 
-  context "checks for column winner" do
+  context "check column winner" do
     it "should check column for a winner" do
       win_board = ["x", nil, nil,
                    "x", nil, nil,
                    "x", nil, nil]
-      Rules.column_winner(win_board).should == true
+      Rules.game_winner(win_board).should == true
+    end
+
+    it "should check second column for a winner" do
+      win_board = [nil, "x", nil,
+                   nil, "x", nil,
+                   nil, "x", nil]
+      Rules.game_winner(win_board).should == true
+    end
+
+    it "should check third column for a winner" do
+      win_board = [nil, nil, "x",
+                   nil, nil, "x",
+                   nil, nil, "x"]
+      Rules.game_winner(win_board).should == true
     end
   end
+
+  context "check diagnol winner" do
+    it "should check left diagnol for a winner" do
+      win_board = ["x", nil, nil,
+                   nil, "x", nil,
+                   nil, nil, "x"]
+      Rules.game_winner(win_board).should == true
+    end
+    
+    it "should check right diagnol for a winner" do
+      win_board = [nil, nil, "x",
+                   nil, "x", nil,
+                   "x", nil, nil]
+      Rules.game_winner(win_board).should == true
+    end
+  end
+
+  # context "check tie game" do 
+  #   it "should call a tie game if board is full and no winner" do
+  #     tie_board = ["x", "o", "x",
+  #                  "x", "o", "o",
+  #                  "o", "x", "x"]
+  #     Rules.tie_game(tie_board).should == true
+  # end
+  # end
 end
