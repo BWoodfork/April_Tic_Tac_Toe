@@ -66,6 +66,7 @@ describe Rules do
       win_board = ["x", nil, nil,
                    "x", nil, nil,
                    "x", nil, nil]
+
       Rules.game_winner(win_board).should == true
     end
 
@@ -73,6 +74,7 @@ describe Rules do
       win_board = [nil, "x", nil,
                    nil, "x", nil,
                    nil, "x", nil]
+
       Rules.game_winner(win_board).should == true
     end
 
@@ -80,6 +82,7 @@ describe Rules do
       win_board = [nil, nil, "x",
                    nil, nil, "x",
                    nil, nil, "x"]
+
       Rules.game_winner(win_board).should == true
     end
   end
@@ -89,13 +92,15 @@ describe Rules do
       win_board = ["x", nil, nil,
                    nil, "x", nil,
                    nil, nil, "x"]
+
       Rules.game_winner(win_board).should == true
     end
-    
+
     it "should check right diagnol for a winner" do
       win_board = [nil, nil, "x",
                    nil, "x", nil,
                    "x", nil, nil]
+                   
       Rules.game_winner(win_board).should == true
     end
   end

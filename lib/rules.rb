@@ -26,6 +26,5 @@ module Rules
 #Need to write a test for this.
   def tie_game
     board_full? ? true : false
-    print "tie game, game over."
   end
 end

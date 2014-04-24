@@ -1,7 +1,7 @@
 require 'simple_ai'
 
-describe Simple_ai do
-  let(:simple_ai) {Simple_ai.new}
+describe SimpleAI do
+  let(:simple_ai) {SimpleAI.new}
 
   
   it "should pick the first spot on an empty board" do
