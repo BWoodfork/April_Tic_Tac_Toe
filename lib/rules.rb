@@ -22,9 +22,4 @@ module Rules
     end
     false
   end
-
-#Need to write a test for this.
-  def tie_game
-    board_full? ? true : false
-  end
 end
