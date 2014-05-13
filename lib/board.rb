@@ -1,8 +1,9 @@
 class Board
-  attr_accessor :game_board
+  attr_accessor :game_board, :token
 
   def initialize
     @game_board = Array.new(9)
+    @token = "x" || "o"
   end
 
   def fill_space(idx,token)

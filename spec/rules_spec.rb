@@ -105,12 +105,35 @@ describe Rules do
     end
   end
 
-  # context "check tie game" do 
-  #   it "should call a tie game if board is full and no winner" do
-  #     tie_board = ["x", "o", "x",
-  #                  "x", "o", "o",
-  #                  "o", "x", "x"]
-  #     Rules.tie_game(tie_board).should == true
-  # end
-  # end
+  context "switch turns" do
+    it "should check if board is empty" do
+      game_board =  [nil, nil, nil,
+                     nil, nil, nil,
+                     nil, nil, nil]
+      Rules.empty_board?(game_board).should == true
+    end
+
+    it "should set current player to be x when board is empty" do
+      game_board =  [nil, nil, nil,
+                     nil, nil, nil,
+                     nil, nil, nil]
+      Rules.current_player(game_board).should == "x"
+    end
+
+    it "should set current player to be o when one turn has been played" do
+      game_board = ["x", nil, nil,
+                    nil, nil, nil,
+                    nil, nil, nil]
+      Rules.current_player(game_board).should == "o"
+    end
+
+     it "should set current player to be x when one turn has been played" do
+      game_board = ["x", "o", nil,
+                    nil, nil, nil,
+                    nil, nil, nil]
+      Rules.current_player(game_board).should == "x"
+    end
+
+
+  end
 end

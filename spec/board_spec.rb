@@ -23,26 +23,23 @@ describe Board do
       board.game_board[0].should == "x"
     end
   end
+
+  context "#tokens" do
+    let(:board) {Board.new}
+    it "should have a game token" do
+      board.token.should == "x"
+    end
+  end
 end
 
 
 
 
 
-
-
-
-
-
-# "should initialize a new board"
 # "should initialize a position given a board and turn"
 # "should make a move"
 # "should list possible moves for initial position"
 # "should list possible moves for a position"
-# "should find winning columns, rows, diagnoals"
-# "should determine no win"
-# "should determine a win for x"
-# "should determine not blocked"
 # "should determine nothing from initial position"
 # "should determine a won position for x"
 # "should determine a won position for o"

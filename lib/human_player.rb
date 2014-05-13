@@ -1,7 +1,8 @@
 class Human_player
-  attr_accessor :token, :player
+  attr_accessor :token
 
   def initialize
-    @token = @token || "x"
+    @token = @token
+    @token = "x" || "o"
   end
 end

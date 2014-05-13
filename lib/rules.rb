@@ -22,4 +22,14 @@ module Rules
     end
     false
   end
+
+  def self.empty_board?(game_board)
+    game_board.all? { |spot| spot == nil }
+  end
+
+  def self.current_player(game_board)
+    tokens = game_board.reject { |spot| spot == nil }
+    tokens.count.odd? ? "o" : "x"
+  end
+
 end

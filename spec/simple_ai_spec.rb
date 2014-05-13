@@ -19,5 +19,4 @@ describe SimpleAI do
                   
     simple_ai.pick_a_spot(game_board).should == 2
   end
-
 end
