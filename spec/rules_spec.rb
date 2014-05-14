@@ -103,6 +103,13 @@ describe Rules do
                    
       Rules.game_winner(win_board).should == true
     end
+
+    it "should check for tie game" do
+      game_board = ["x", "o", "x",
+                    "x", "o", "o",
+                    "o", "x", "x"]
+      Rules.tie_game?(game_board).should == true
+    end
   end
 
   context "switch turns" do
@@ -132,8 +139,6 @@ describe Rules do
                     nil, nil, nil,
                     nil, nil, nil]
       Rules.current_player(game_board).should == "x"
-    end
-
-
+     end
   end
 end

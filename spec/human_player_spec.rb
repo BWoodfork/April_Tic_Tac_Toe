@@ -1,12 +1,10 @@
 require 'human_player'
 
 describe Human_player do
- let(:human) {Human_player.new}
- let(:game_board) { [nil, nil, "x",
-                        nil, nil, nil,
-                        nil, nil, nil] }
-                        
-  it "should have a token" do
-    human.token.should == "x"
-  end
+  let(:human) {Human_player.new}
+
+  # it "should receive a name" do
+  #   human.name = "byron"
+  #   human.name.should == "byron"
+  # end
 end

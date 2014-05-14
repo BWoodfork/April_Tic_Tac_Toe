@@ -31,16 +31,3 @@ describe Board do
     end
   end
 end
-
-
-
-
-
-# "should initialize a position given a board and turn"
-# "should make a move"
-# "should list possible moves for initial position"
-# "should list possible moves for a position"
-# "should determine nothing from initial position"
-# "should determine a won position for x"
-# "should determine a won position for o"
-# "should determine a won position for o"

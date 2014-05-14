@@ -16,6 +16,10 @@ module Rules
     !game_board.include?(nil)
   end
 
+  def self.tie_game?(game_board)
+    board_full?(game_board) ? true : false
+  end
+
   def self.game_winner(game_board)
     WINNING_COMBOS.each do |winning_combo|
       return true if game_board[winning_combo[0]] == "x" && game_board[winning_combo[1]] == "x" && game_board[winning_combo[2]] == "x"
@@ -31,5 +35,4 @@ module Rules
     tokens = game_board.reject { |spot| spot == nil }
     tokens.count.odd? ? "o" : "x"
   end
-
 end
