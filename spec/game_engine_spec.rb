@@ -1,7 +1,7 @@
 require "game_engine"
 
-describe Game_engine do
-  let(:game) {Game_engine.new}
+describe GameEngine do
+  let(:game) {GameEngine.new}
 
   it "should check if game is over if board is full" do
     game_board = ["x", "x", "x",
@@ -37,5 +37,4 @@ describe Game_engine do
                   nil, nil, nil]
     game.run_game(game_board).should == true
   end
-
 end
