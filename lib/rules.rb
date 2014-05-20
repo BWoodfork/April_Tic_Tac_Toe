@@ -32,7 +32,7 @@ class Rules
       game_board.all? { |spot| spot == nil }
     end
   
-    def current_player(game_board)
+    def current_player(game_board) #  < -- This is duplicate code. Remove when you find out why you need to.
       tokens = game_board.reject { |spot| spot == nil }
       tokens.count.odd? ? "o" : "x"
     end

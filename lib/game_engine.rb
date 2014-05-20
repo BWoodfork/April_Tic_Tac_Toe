@@ -1,4 +1,7 @@
 class GameEngine
+
+  attr_accessor :player1, :player2
+
   def game_over(game_board)
     full = Rules.board_full?(game_board)
     tie = Rules.tie_game?(game_board)
@@ -7,32 +10,19 @@ class GameEngine
     full || tie || win ? true : false
   end
 
-  def run_game(game_board)
-    return true while game_over(game_board) == false
+  def setup_players
+    @player1 = HumanPlayer.new
+    @player2 = HumanPlayer.new
+  end
+
+  # def run_game(game_board)  
+  #   while !game_over(game_board) do
+  #     current_player(game_board)
+  #   end
+  # end
+
+  def current_player(game_board)
+    tokens = game_board.reject { |spot| spot == nil }
+    tokens.count.odd? ? @player2 : @player1
   end
 end
-
-  # while !game_over?(game_board)
-  #   player.take_turn or current_player
-
-#   def ai_turn
-#     ai.move
-#     #ai picks a space and fills it
-#     human_turn
-#     #if game_over? call some game over
-#   end
-
-#   def human_turn
-#     input = accept_input
-#     #fill inputted cell with human_player.value
-#     ai_turn
-#   end
-
-#   def game_over
-#     #display who won, etc...
-#   end
-
-#   def accept_input
-#     gets.chomp.downcase
-#   end
-# end
