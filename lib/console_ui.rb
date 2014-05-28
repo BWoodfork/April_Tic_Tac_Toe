@@ -1,3 +1,5 @@
+require 'pry'
+
 class ConsoleUI
 
   attr_reader :io
@@ -10,11 +12,8 @@ class ConsoleUI
     send_message "Welcome To Ruby Tic Tac Toe"
   end
 
-  def number_of_players
-    send_message "How many players?"
-  end
-
   def get_number_of_players
+    send_message "How many players?"
     receive_message
   end
 
@@ -25,6 +24,7 @@ class ConsoleUI
   def receive_message
     gets.chomp
   end
+
   alias :get_move :receive_message
 
 end

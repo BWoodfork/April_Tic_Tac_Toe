@@ -2,7 +2,7 @@ class Computer
   attr_accessor :ai, :token
 
   def initialize(token)
-    @ai = SimpleAI.new
+    @ai = SimpleAI.new(token)
     @token = token
   end
 

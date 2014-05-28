@@ -3,7 +3,7 @@ require 'console_ui'
 
 describe HumanPlayer do
   let(:ui) {ConsoleUI.new}
-  let(:human) {HumanPlayer.new("x", ui)}
+  let(:human) {HumanPlayer.new "x", ui }
 
   it "should have a name" do
     human.name = "byron"
