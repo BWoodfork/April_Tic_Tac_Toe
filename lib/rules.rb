@@ -25,6 +25,9 @@ class Rules
       WINNING_COMBOS.each do |winning_combo|
         return true if game_board[winning_combo[0]] == "x" && game_board[winning_combo[1]] == "x" && game_board[winning_combo[2]] == "x"
       end
+      WINNING_COMBOS.each do |winning_combo|
+        return true if game_board[winning_combo[0]] == "o" && game_board[winning_combo[1]] == "o" && game_board[winning_combo[2]] == "o"
+      end
       false
     end
   

@@ -1,4 +1,5 @@
-require 'pry'
+require 'game_engine'
+require 'board'
 
 class ConsoleUI
 
@@ -23,6 +24,10 @@ class ConsoleUI
 
   def receive_message
     gets.chomp
+  end
+
+  def print_board(game_board)
+    print game_board
   end
 
   alias :get_move :receive_message

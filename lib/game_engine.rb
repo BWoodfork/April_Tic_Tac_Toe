@@ -1,3 +1,6 @@
+require 'human_player'
+require 'rules'
+
 class GameEngine
 
   attr_accessor :player1, :player2
@@ -10,7 +13,7 @@ class GameEngine
   def get_options
     @ui.welcome_message
     @num_of_players = @ui.get_number_of_players
-    set_players    
+    set_players
   end
 
   def game_over(game_board)
@@ -22,13 +25,13 @@ class GameEngine
   end
 
   def set_players
-    if @num_of_players == 2
+    # if @num_of_players == 2
       @player1 = HumanPlayer.new("x", @ui)
       @player2 = HumanPlayer.new("o", @ui)
-    else
-      @player1 = HumanPlayer.new("x", @ui)
-      @player2 = SimpleAI.new("o")
-    end
+    # else
+    #   @player1 = HumanPlayer.new("x", @ui)
+    #   @player2 = SimpleAI.new("o")
+    # end
   end
 
   def current_player(game_board)
@@ -39,6 +42,7 @@ class GameEngine
   def run_game(game_board)
     while !game_over(game_board) do
       current_player(game_board).take_turn(game_board)
+      puts display_board(game_board)
     end
   end
 

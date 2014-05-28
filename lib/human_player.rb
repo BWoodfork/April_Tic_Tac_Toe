@@ -8,7 +8,7 @@ class HumanPlayer
   end
 
   def take_turn(game_board)
-    move = @ui.get_move
+    move = @ui.get_move.to_i
     game_board[move] = @token
   end
 
